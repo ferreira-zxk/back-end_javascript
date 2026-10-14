@@ -10,7 +10,7 @@ const paginas = document.querySelectorAll(".pagina");
 botoesMenu.forEach((botao) => {
     botao.addEventListener("click", () => {
         // qual pagina este botão quer mostrar? ( vem do data-pagina no HTML)
-        const idDapagina = botao.datase.pagina;
+        const idDapagina = botao.dataset.pagina;
 
         //esconde todas as paginas e tira o destaque de todos os botoes 
         paginas.forEach((pagina) => pagina.classList.remove("visivel"));
@@ -35,7 +35,7 @@ document.querySelector("#btn-mudar-titulo").addEventListener("click", () => {
 });
 
 // passa todos os paragrafos para maiusculas
-document.querySelector("#btn-maiusculos").addEventListener("click", () => {
+document.querySelector("#btn-maisculas").addEventListener("click", () => {
     paragrafos.forEach((p) => {
         p.textContent = p.textContent.toUpperCase();
     });
@@ -64,11 +64,11 @@ const cores = ["vermelho", "verde", "azul", "amarelo", "roxo", "laranja"];
 let proximaCor = 0;
 
 function adicionarCor(nomeDaCor) {
-    const item = document.createElement("li"); //1. cria
+    const item = document.createElement("li");  //1. cria
     item.textContent = nomeDaCor ;              //2. preenche
 
     // cada item  ganha seu proprio botão  de remover 
-    const item = document.createElement("button");
+    const botaoRemover = document.createElement("button");
     botaoRemover.textContent = "remover";
     botaoRemover.addEventListener("click", () => {
         item.remove();
